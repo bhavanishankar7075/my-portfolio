@@ -42,15 +42,15 @@ export default function About() {
           animate={inView ? 'show' : 'hidden'}
           className="flex items-center gap-3 mb-4"
         >
-          <span className="h-px w-10 bg-cyan-400/50" />
-          <span className="text-xs font-mono text-cyan-400 tracking-widest uppercase">About Me</span>
+          <span className="h-px w-10 bg-gradient-to-r from-blue-600 to-indigo-600" />
+          <span className="text-xs font-mono bg-gradient-to-r from-blue-700 to-indigo-800 bg-clip-text text-transparent tracking-widest uppercase font-semibold">About Me</span>
         </motion.div>
 
         <motion.h2
           variants={fadeUp}
           initial="hidden"
           animate={inView ? 'show' : 'hidden'}
-          className="section-title text-white mb-16"
+          className="section-title bg-gradient-to-r from-blue-700 via-indigo-800 to-slate-900 bg-clip-text text-transparent mb-16"
         >
           Crafting digital
           <br />
@@ -90,9 +90,9 @@ export default function About() {
               ].map(({ icon: Icon, label }) => (
                 <span
                   key={label}
-                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/60 backdrop-blur-sm border border-slate-300/50 text-xs text-slate-600"
+                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-xs text-slate-700 hover:border-blue-400 hover:shadow-[0_0_12px_rgba(37,99,235,0.15)] transition-all duration-200"
                 >
-                  <Icon size={12} className="text-cyan-400" />
+                  <Icon size={12} className="text-blue-600" />
                   {label}
                 </span>
               ))}
@@ -111,9 +111,9 @@ export default function About() {
               {STATS.map(({ value, label, icon: Icon }) => (
                 <div
                   key={label}
-                  className="bg-white/50 backdrop-blur-sm rounded-2xl p-4 border border-slate-300/50 text-center group hover:border-cyan-500/30 transition-colors duration-300"
+                  className="bg-white rounded-2xl p-4 border border-slate-200 text-center group hover:border-blue-400 hover:shadow-[0_0_15px_rgba(37,99,235,0.15)] transition-all duration-200"
                 >
-                  <Icon size={18} className="mx-auto mb-2 text-cyan-500/60 group-hover:text-cyan-500 transition-colors" />
+                  <Icon size={18} className="mx-auto mb-2 text-blue-600/60 group-hover:text-blue-600 transition-colors" />
                   <div className="text-2xl font-black text-slate-900 mb-1">{value}</div>
                   <div className="text-xs text-slate-600">{label}</div>
                 </div>
@@ -125,11 +125,11 @@ export default function About() {
               <motion.div
                 key={e.degree}
                 variants={fadeUp}
-                className="bg-white/50 backdrop-blur-sm rounded-2xl p-5 border border-slate-300/50 hover:border-purple-500/30 transition-colors duration-300 group"
+                className="bg-white rounded-2xl p-5 border border-slate-200 hover:border-blue-400 hover:shadow-[0_0_15px_rgba(37,99,235,0.15)] transition-all duration-200 group"
               >
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-purple-500/15 border border-purple-500/25 flex items-center justify-center shrink-0 group-hover:bg-purple-500/20 transition-colors">
-                    <GraduationCap size={18} className="text-purple-400" />
+                  <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center shrink-0 group-hover:bg-blue-100 transition-colors">
+                    <GraduationCap size={18} className="text-blue-600" />
                   </div>
                   <div>
                     <div className="text-slate-900 font-semibold text-sm mb-0.5">{e.degree}</div>
@@ -144,15 +144,15 @@ export default function About() {
             ))}
 
             {/* Certificates */}
-            <motion.div variants={fadeUp} className="bg-white/50 backdrop-blur-sm rounded-2xl p-5 border border-slate-300/50">
-              <div className="text-xs font-mono text-slate-600 uppercase tracking-widest mb-3">Certifications</div>
+            <motion.div variants={fadeUp} className="bg-white rounded-2xl p-5 border border-slate-200 hover:border-blue-400 hover:shadow-[0_0_15px_rgba(37,99,235,0.15)] transition-all duration-200">
+              <div className="text-xs font-mono bg-gradient-to-r from-blue-700 to-indigo-800 bg-clip-text text-transparent uppercase tracking-widest mb-3 font-semibold">Certifications</div>
               <div className="space-y-2">
                 {[
                   'Full Stack Development — Internshala',
                   'Web Development — Labmentix',
                 ].map((cert) => (
                   <div key={cert} className="flex items-center gap-2 text-sm text-slate-700">
-                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-500 shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-blue-600 shrink-0" />
                     {cert}
                   </div>
                 ))}
