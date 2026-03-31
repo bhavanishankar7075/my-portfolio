@@ -81,12 +81,12 @@ export default function Contact() {
             <span className="h-px w-10 bg-cyan-400/50" />
             <span className="text-xs font-mono text-cyan-400 tracking-widest uppercase">Contact</span>
           </div>
-          <h2 className="section-title text-white">
+          <h2 className="section-title text-slate-900">
             Let's build something
             <br />
             <span className="gradient-text-cyan">great together.</span>
           </h2>
-          <p className="text-slate-400 mt-4 max-w-md">
+          <p className="text-slate-600 mt-4 max-w-md">
             Available for internships, full-time roles, and freelance projects. Drop a message
             and I'll get back within 24 hours.
           </p>
@@ -106,7 +106,7 @@ export default function Contact() {
             >
               <div className="grid sm:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-xs font-mono text-slate-400 mb-2 tracking-widest uppercase">
+                  <label className="block text-xs font-mono text-slate-600 mb-2 tracking-widest uppercase">
                     Name
                   </label>
                   <input
@@ -119,7 +119,7 @@ export default function Contact() {
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-mono text-slate-400 mb-2 tracking-widest uppercase">
+                  <label className="block text-xs font-mono text-slate-600 mb-2 tracking-widest uppercase">
                     Email
                   </label>
                   <input
@@ -135,7 +135,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <label className="block text-xs font-mono text-slate-400 mb-2 tracking-widest uppercase">
+                <label className="block text-xs font-mono text-slate-600 mb-2 tracking-widest uppercase">
                   Subject
                 </label>
                 <input
@@ -149,7 +149,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <label className="block text-xs font-mono text-slate-400 mb-2 tracking-widest uppercase">
+                <label className="block text-xs font-mono text-slate-600 mb-2 tracking-widest uppercase">
                   Message
                 </label>
                 <textarea
@@ -166,7 +166,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={status === 'sending' || status === 'sent'}
-                className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl font-semibold text-sm bg-gradient-to-r from-cyan-500 via-cyan-400 to-purple-500 text-white hover:shadow-glow-cyan disabled:opacity-50 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] hover:brightness-110"
+                className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl font-semibold text-sm bg-gradient-to-r from-cyan-500 via-cyan-400 to-purple-500 text-slate-900 hover:shadow-glow-cyan disabled:opacity-50 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] hover:brightness-110"
               >
                 {status === 'sending' ? (
                   <>
@@ -203,7 +203,7 @@ export default function Contact() {
             className="lg:col-span-2 space-y-4"
           >
             {/* Availability badge */}
-            <div className="glass-card rounded-2xl border border-green-400/15 p-5">
+            <div className="bg-white/60 backdrop-blur-sm rounded-2xl border border-green-400/15 p-5">
               <div className="flex items-center gap-3 mb-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-green-400 animate-pulse" />
                 <span className="text-sm font-semibold text-green-400">Available Now</span>
@@ -221,7 +221,7 @@ export default function Contact() {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`flex items-center gap-4 p-4 glass-card rounded-2xl border border-white/5 text-slate-400 ${color} transition-all duration-200 group`}
+                  className={`flex items-center gap-4 p-4 bg-white/60 backdrop-blur-sm rounded-2xl border border-white/5 text-slate-600 ${color} transition-all duration-200 group`}
                 >
                   <div className="w-9 h-9 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
                     <Icon size={16} />

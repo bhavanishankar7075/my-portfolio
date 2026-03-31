@@ -65,17 +65,17 @@ export default function About() {
             animate={inView ? 'show' : 'hidden'}
             className="space-y-6"
           >
-            <motion.p variants={fadeUp} className="text-slate-300 text-lg leading-relaxed">
-              I'm a <span className="text-cyan-400 font-semibold">MERN Full-Stack Developer</span> with
+            <motion.p variants={fadeUp} className="text-slate-700 text-lg leading-relaxed">
+              I'm a <span className="text-cyan-500 font-semibold">MERN Full-Stack Developer</span> with
               hands-on experience building responsive, user-centric applications using React,
               Redux Toolkit, Node.js, Express, and MongoDB.
             </motion.p>
-            <motion.p variants={fadeUp} className="text-slate-400 leading-relaxed">
+            <motion.p variants={fadeUp} className="text-slate-600 leading-relaxed">
               From architecting scalable e-commerce platforms to building real-time booking
               systems with WebSocket live tracking, I focus on shipping production-grade
               systems with clean, maintainable code.
             </motion.p>
-            <motion.p variants={fadeUp} className="text-slate-400 leading-relaxed">
+            <motion.p variants={fadeUp} className="text-slate-600 leading-relaxed">
               Currently completing my B.Tech in Computer Science at BITS Visakhapatnam, I
               actively maintain GitHub repositories showcasing full-stack MERN projects with
               live demos for real-world evaluation.
@@ -90,7 +90,7 @@ export default function About() {
               ].map(({ icon: Icon, label }) => (
                 <span
                   key={label}
-                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass-card border border-white/6 text-xs text-slate-400"
+                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/60 backdrop-blur-sm border border-slate-300/50 text-xs text-slate-600"
                 >
                   <Icon size={12} className="text-cyan-400" />
                   {label}
@@ -111,11 +111,11 @@ export default function About() {
               {STATS.map(({ value, label, icon: Icon }) => (
                 <div
                   key={label}
-                  className="glass-card rounded-2xl p-4 border border-white/5 text-center group hover:border-cyan-400/20 transition-colors duration-300"
+                  className="bg-white/50 backdrop-blur-sm rounded-2xl p-4 border border-slate-300/50 text-center group hover:border-cyan-500/30 transition-colors duration-300"
                 >
-                  <Icon size={18} className="mx-auto mb-2 text-cyan-400/60 group-hover:text-cyan-400 transition-colors" />
-                  <div className="text-2xl font-black text-white mb-1">{value}</div>
-                  <div className="text-xs text-slate-500">{label}</div>
+                  <Icon size={18} className="mx-auto mb-2 text-cyan-500/60 group-hover:text-cyan-500 transition-colors" />
+                  <div className="text-2xl font-black text-slate-900 mb-1">{value}</div>
+                  <div className="text-xs text-slate-600">{label}</div>
                 </div>
               ))}
             </motion.div>
@@ -125,17 +125,17 @@ export default function About() {
               <motion.div
                 key={e.degree}
                 variants={fadeUp}
-                className="glass-card rounded-2xl p-5 border border-white/5 hover:border-purple-500/20 transition-colors duration-300 group"
+                className="bg-white/50 backdrop-blur-sm rounded-2xl p-5 border border-slate-300/50 hover:border-purple-500/30 transition-colors duration-300 group"
               >
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-xl bg-purple-500/15 border border-purple-500/25 flex items-center justify-center shrink-0 group-hover:bg-purple-500/20 transition-colors">
                     <GraduationCap size={18} className="text-purple-400" />
                   </div>
                   <div>
-                    <div className="text-white font-semibold text-sm mb-0.5">{e.degree}</div>
-                    <div className="text-slate-400 text-xs mb-1">{e.school}, {e.location}</div>
+                    <div className="text-slate-900 font-semibold text-sm mb-0.5">{e.degree}</div>
+                    <div className="text-slate-600 text-xs mb-1">{e.school}, {e.location}</div>
                     <div className="flex items-center gap-3">
-                      <span className="text-xs font-mono text-cyan-400">{e.grade}</span>
+                      <span className="text-xs font-mono text-cyan-500">{e.grade}</span>
                       <span className="text-slate-600 text-xs">{e.period}</span>
                     </div>
                   </div>
@@ -144,15 +144,15 @@ export default function About() {
             ))}
 
             {/* Certificates */}
-            <motion.div variants={fadeUp} className="glass-card rounded-2xl p-5 border border-white/5">
-              <div className="text-xs font-mono text-slate-500 uppercase tracking-widest mb-3">Certifications</div>
+            <motion.div variants={fadeUp} className="bg-white/50 backdrop-blur-sm rounded-2xl p-5 border border-slate-300/50">
+              <div className="text-xs font-mono text-slate-600 uppercase tracking-widest mb-3">Certifications</div>
               <div className="space-y-2">
                 {[
                   'Full Stack Development — Internshala',
                   'Web Development — Labmentix',
                 ].map((cert) => (
-                  <div key={cert} className="flex items-center gap-2 text-sm text-slate-300">
-                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0" />
+                  <div key={cert} className="flex items-center gap-2 text-sm text-slate-700">
+                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-500 shrink-0" />
                     {cert}
                   </div>
                 ))}

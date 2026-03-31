@@ -44,18 +44,18 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
           scrolled
-            ? 'py-3 glass-card border-b border-white/5'
+            ? 'py-3 bg-white/80 backdrop-blur-md border-b border-slate-200'
             : 'py-5 bg-transparent'
         }`}
       >
         <nav className="max-w-6xl mx-auto px-6 flex items-center justify-between">
           {/* Logo */}
           <a href="#hero" className="group flex items-center gap-2">
-            <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center text-sm font-black text-black">
+            <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center text-sm font-black text-white">
               B
             </span>
-            <span className="font-bold text-lg tracking-tight text-white/90 group-hover:text-white transition-colors">
-              bhavani<span className="text-cyan-400">.</span>dev
+            <span className="font-bold text-lg tracking-tight text-slate-900 group-hover:text-slate-700 transition-colors">
+              bhavani<span className="text-cyan-500">.</span>dev
             </span>
           </a>
 
@@ -67,8 +67,8 @@ export default function Navbar() {
                   href={link.href}
                   className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200 ${
                     active === link.href.slice(1)
-                      ? 'text-cyan-400'
-                      : 'text-slate-400 hover:text-white'
+                      ? 'text-cyan-500'
+                      : 'text-slate-600 hover:text-slate-900'
                   }`}
                 >
                   {active === link.href.slice(1) && (
@@ -95,7 +95,7 @@ export default function Navbar() {
           {/* Mobile hamburger */}
           <button
             onClick={() => setMenuOpen((v) => !v)}
-            className="md:hidden p-2 rounded-lg text-slate-400 hover:text-white transition-colors"
+            className="md:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 transition-colors"
             aria-label="Toggle menu"
           >
             {menuOpen ? <X size={22} /> : <Menu size={22} />}
@@ -111,7 +111,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.25 }}
-            className="fixed top-16 inset-x-4 z-40 rounded-2xl glass-card border border-white/8 p-4 md:hidden"
+            className="fixed top-16 inset-x-4 z-40 rounded-2xl bg-white/80 backdrop-blur-md border border-slate-200 p-4 md:hidden"
           >
             <ul className="flex flex-col gap-1">
               {NAV_LINKS.map((link) => (
@@ -119,7 +119,7 @@ export default function Navbar() {
                   <a
                     href={link.href}
                     onClick={() => setMenuOpen(false)}
-                    className="block px-4 py-3 text-sm font-medium text-slate-300 hover:text-cyan-400 hover:bg-cyan-400/5 rounded-lg transition-colors"
+                    className="block px-4 py-3 text-sm font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors"
                   >
                     {link.label}
                   </a>

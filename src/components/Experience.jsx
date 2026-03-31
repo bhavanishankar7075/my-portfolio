@@ -73,7 +73,7 @@ function ExperienceCard({ exp, index }) {
       <div className={`absolute left-0 top-7 w-4 h-4 rounded-full ${c.dot} ring-4 ${c.ring} shadow-glow-sm-cyan z-10`} />
 
       {/* Card */}
-      <div className={`glass-card rounded-3xl border border-white/6 ${c.border.replace('border-', 'hover:border-')} p-7 transition-all duration-300 hover:-translate-y-0.5 group overflow-hidden relative`}>
+      <div className={`bg-white/60 backdrop-blur-sm rounded-3xl border border-white/6 ${c.border.replace('border-', 'hover:border-')} p-7 transition-all duration-300 hover:-translate-y-0.5 group overflow-hidden relative`}>
         {/* Ambient */}
         <div className={`absolute top-0 left-0 w-48 h-48 rounded-full bg-gradient-to-br ${c.glow} to-transparent blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
 
@@ -85,7 +85,7 @@ function ExperienceCard({ exp, index }) {
                 <Briefcase size={18} className={c.icon} />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-white leading-tight">{exp.role}</h3>
+                <h3 className="text-lg font-bold text-slate-900 leading-tight">{exp.role}</h3>
                 <p className="text-base font-semibold gradient-text-cyan">{exp.company}</p>
               </div>
             </div>
@@ -111,7 +111,7 @@ function ExperienceCard({ exp, index }) {
           {/* Highlights */}
           <ul className="space-y-3 mb-5">
             {exp.highlights.map((h) => (
-              <li key={h} className="flex items-start gap-3 text-sm text-slate-400 leading-relaxed">
+              <li key={h} className="flex items-start gap-3 text-sm text-slate-600 leading-relaxed">
                 <ChevronRight size={14} className={`${c.icon} mt-0.5 shrink-0`} />
                 {h}
               </li>
@@ -121,7 +121,7 @@ function ExperienceCard({ exp, index }) {
           {/* Skill chips */}
           <div className="flex flex-wrap gap-2">
             {exp.skills.map((s) => (
-              <span key={s} className="px-2.5 py-1 rounded-lg text-xs font-mono text-slate-400 bg-white/4 border border-white/6">
+              <span key={s} className="px-2.5 py-1 rounded-lg text-xs font-mono text-slate-600 bg-white/4 border border-white/6">
                 {s}
               </span>
             ))}
@@ -154,7 +154,7 @@ export default function Experience() {
             <span className="h-px w-10 bg-purple-400/50" />
             <span className="text-xs font-mono text-purple-400 tracking-widest uppercase">Experience</span>
           </div>
-          <h2 className="section-title text-white">
+          <h2 className="section-title text-slate-900">
             My career
             <br />
             <span className="gradient-text-purple">journey.</span>
@@ -185,7 +185,7 @@ export default function Experience() {
             className="relative pl-12 md:pl-16 mt-8"
           >
             <div className="absolute left-0 top-5 w-4 h-4 rounded-full bg-slate-700 ring-4 ring-slate-700/40 border-2 border-dashed border-slate-600 z-10" />
-            <div className="glass-card rounded-2xl border border-white/5 p-5">
+            <div className="bg-white/60 backdrop-blur-sm rounded-2xl border border-white/5 p-5">
               <p className="text-sm text-slate-500 font-mono">
                 <span className="text-cyan-400/70">// </span>B.Tech CSE (2022–2026) · Currently SDE Intern @ Roadvision AI ·
                 Open to full-time opportunities from 2026

@@ -29,7 +29,7 @@ const PROJECTS = [
     accentTo: 'to-blue-600/10',
     borderHover: 'hover:border-cyan-400/30',
     tag: 'Featured',
-    tagColor: 'text-cyan-400 bg-cyan-400/10 border-cyan-400/20',
+    tagColor: 'text-cyan-700 bg-cyan-100 border-cyan-200',
   },
   {
     id: 'homeservice',
@@ -51,7 +51,7 @@ const PROJECTS = [
     accentTo: 'to-pink-600/10',
     borderHover: 'hover:border-purple-400/30',
     tag: 'Capstone',
-    tagColor: 'text-purple-400 bg-purple-400/10 border-purple-400/20',
+    tagColor: 'text-purple-700 bg-purple-100 border-purple-200',
   },
   {
     id: 'weather',
@@ -73,7 +73,7 @@ const PROJECTS = [
     accentTo: 'to-blue-600/10',
     borderHover: 'hover:border-sky-400/30',
     tag: 'API Integration',
-    tagColor: 'text-sky-400 bg-sky-400/10 border-sky-400/20',
+    tagColor: 'text-sky-700 bg-sky-100 border-sky-200',
   },
   {
     id: 'worldbook',
@@ -94,7 +94,7 @@ const PROJECTS = [
     accentTo: 'to-indigo-600/8',
     borderHover: 'hover:border-blue-400/30',
     tag: 'TypeScript',
-    tagColor: 'text-blue-400 bg-blue-400/10 border-blue-400/20',
+    tagColor: 'text-blue-700 bg-blue-100 border-blue-200',
   },
 ]
 
@@ -115,7 +115,7 @@ function ProjectCard({ project }) {
       variants={card}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className={`relative glass-card rounded-3xl border border-white/6 ${project.borderHover} overflow-hidden transition-all duration-500 group ${hovered ? 'shadow-glass-lg -translate-y-1' : ''}`}
+      className={`relative bg-white shadow-sm hover:shadow-lg rounded-3xl border border-slate-200 overflow-hidden transition-all duration-300 group ${hovered ? '-translate-y-1' : ''}`}
     >
       {/* Top gradient accent */}
       <div className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${project.accentFrom.replace('/20', '')} to-transparent opacity-60 group-hover:opacity-100 transition-opacity`} />
@@ -130,15 +130,15 @@ function ProjectCard({ project }) {
             <span className={`inline-block px-2.5 py-1 rounded-full text-xs font-semibold border mb-3 ${project.tagColor}`}>
               {project.tag}
             </span>
-            <h3 className="text-xl font-bold text-white leading-tight">{project.title}</h3>
-            <p className="text-sm text-slate-500 mt-1 font-mono">{project.subtitle} · {project.period}</p>
+            <h3 className="text-xl font-bold text-slate-900 leading-tight">{project.title}</h3>
+            <p className="text-sm text-slate-600 mt-1 font-mono">{project.subtitle} · {project.period}</p>
           </div>
           <div className="flex gap-2 shrink-0 ml-4">
             <a
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-xl glass-card border border-white/6 text-slate-400 hover:text-white hover:border-white/15 transition-all duration-200"
+              className="p-2.5 rounded-lg bg-slate-100 border border-slate-200 text-slate-700 hover:text-slate-900 hover:bg-slate-200 hover:border-slate-300 transition-all duration-200"
               aria-label="GitHub"
             >
               <GithubIcon size={16} />
@@ -147,7 +147,7 @@ function ProjectCard({ project }) {
               href={project.demo}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-xl glass-card border border-white/6 text-slate-400 hover:text-cyan-400 hover:border-cyan-400/30 transition-all duration-200"
+              className="p-2.5 rounded-lg bg-slate-100 border border-slate-200 text-slate-700 hover:text-cyan-700 hover:bg-cyan-50 hover:border-cyan-300 transition-all duration-200"
               aria-label="Live Demo"
             >
               <ExternalLink size={16} />
@@ -156,13 +156,13 @@ function ProjectCard({ project }) {
         </div>
 
         {/* Description */}
-        <p className="text-slate-400 text-sm leading-relaxed mb-5">{project.description}</p>
+        <p className="text-slate-600 text-sm leading-relaxed mb-5">{project.description}</p>
 
         {/* Highlights */}
         <ul className="space-y-1.5 mb-6">
           {project.highlights.map((h) => (
-            <li key={h} className="flex items-start gap-2 text-xs text-slate-400">
-              <ArrowUpRight size={12} className="text-cyan-400 mt-0.5 shrink-0" />
+            <li key={h} className="flex items-start gap-2 text-xs text-slate-600">
+              <ArrowUpRight size={12} className="text-cyan-500 mt-0.5 shrink-0" />
               {h}
             </li>
           ))}
@@ -173,7 +173,7 @@ function ProjectCard({ project }) {
           {project.stack.map((tech) => (
             <span
               key={tech}
-              className="px-2.5 py-1 rounded-lg text-xs font-mono text-slate-400 bg-white/4 border border-white/6 hover:border-white/12 transition-colors"
+              className="px-3 py-1.5 rounded-full text-xs font-medium text-slate-700 bg-slate-100 hover:bg-blue-50 hover:text-blue-700 hover:border hover:border-blue-300 hover:shadow-[0_0_15px_rgba(37,99,235,0.15)] transition-all duration-200"
             >
               {tech}
             </span>
@@ -199,11 +199,11 @@ export default function Projects() {
           className="mb-16"
         >
           <div className="flex items-center gap-3 mb-4">
-            <span className="h-px w-10 bg-cyan-400/50" />
-            <span className="text-xs font-mono text-cyan-400 tracking-widest uppercase">Projects</span>
+            <span className="h-px w-10 bg-cyan-500" />
+            <span className="text-xs font-mono text-cyan-600 tracking-widest uppercase">Projects</span>
           </div>
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-            <h2 className="section-title text-white">
+            <h2 className="section-title text-slate-900">
               What I've
               <br />
               <span className="gradient-text-cyan">built.</span>
@@ -212,7 +212,7 @@ export default function Projects() {
               href="https://github.com/bhavanishankar7075"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-sm text-slate-400 hover:text-cyan-400 transition-colors group"
+              className="flex items-center gap-2 text-sm text-slate-600 hover:text-cyan-600 transition-colors group"
             >
               <GithubIcon size={16} />
               View all 33+ repos

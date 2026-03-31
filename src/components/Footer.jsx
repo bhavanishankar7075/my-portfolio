@@ -23,23 +23,23 @@ const NAV = [
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-white/5 py-12 px-6">
+    <footer className="relative border-t border-slate-200 py-12 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Brand */}
           <div className="flex items-center gap-2">
-            <span className="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center text-xs font-black text-black">
+            <span className="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center text-xs font-black text-white">
               B
             </span>
-            <span className="font-bold text-white/70">
-              bhavani<span className="text-cyan-400">.</span>dev
+            <span className="font-bold text-slate-900">
+              bhavani<span className="text-cyan-500">.</span>dev
             </span>
           </div>
 
           {/* Nav */}
           <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2">
             {NAV.map((l) => (
-              <a key={l.href} href={l.href} className="text-sm text-slate-500 hover:text-slate-300 transition-colors">
+              <a key={l.href} href={l.href} className="text-sm text-slate-600 hover:text-slate-900 transition-colors">
                 {l.label}
               </a>
             ))}
@@ -58,7 +58,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="p-2 rounded-lg text-slate-500 hover:text-cyan-400 transition-colors"
+                className="p-2 rounded-lg text-slate-600 hover:text-slate-900 transition-colors"
               >
                 <Icon size={16} />
               </a>
@@ -66,12 +66,12 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 pt-6 border-t border-white/4 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div className="mt-8 pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs text-slate-600 font-mono">
             © {new Date().getFullYear()} Bhavani Shankar. All rights reserved.
           </p>
-          <p className="text-xs text-slate-600 flex items-center gap-1.5">
-            Built with <Heart size={11} className="text-red-400/70" /> using React, Vite & Framer Motion
+          <p className="text-xs flex items-center gap-1.5">
+            <span className="text-slate-600">Built with</span> <Heart size={11} className="text-red-500" /> <span className="bg-gradient-to-r from-blue-700 via-indigo-800 to-slate-900 bg-clip-text text-transparent font-semibold">React, Vite & Framer Motion</span>
           </p>
         </div>
       </div>

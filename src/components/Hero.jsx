@@ -177,7 +177,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex items-center justify-center min-h-screen overflow-hidden"
+      className="relative flex items-center justify-center min-h-screen overflow-hidden bg-gradient-to-b from-blue-50 via-slate-50 to-slate-50"
     >
       {/* 3D Canvas — right side */}
       <div className="absolute inset-0 z-0">
@@ -193,8 +193,8 @@ export default function Hero() {
       </div>
 
       {/* Vignette */}
-      <div className="absolute inset-0 z-1 bg-gradient-to-r from-[#02020f] via-[#02020f]/80 to-transparent" />
-      <div className="absolute inset-0 z-1 bg-gradient-to-t from-[#02020f] via-transparent to-[#02020f]/40" />
+      <div className="absolute inset-0 z-1 bg-gradient-to-r from-slate-100 via-slate-50/50 to-transparent" />
+      <div className="absolute inset-0 z-1 bg-gradient-to-t from-slate-50 via-transparent to-slate-100/40" />
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-6xl px-6 pt-24 mx-auto">
@@ -206,8 +206,8 @@ export default function Hero() {
         >
           {/* Badge */}
           <motion.div variants={item} className="mb-6">
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass-card border border-cyan-400/20 text-xs font-mono text-cyan-400/80 tracking-widest uppercase">
-              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/40 backdrop-blur-md border border-cyan-500/30 text-xs font-mono text-cyan-600 tracking-widest uppercase">
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-pulse" />
               Available for opportunities
             </span>
           </motion.div>
@@ -215,7 +215,7 @@ export default function Hero() {
           {/* Headline */}
           <motion.h1
             variants={item}
-            className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight gradient-text-cyan text-slate-900 dark:text- mb-4 transition-colors duration-300"
+            className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight gradient-text-cyan mb-4 transition-colors duration-300"
           >
             Bhavani
             <br />
@@ -225,7 +225,7 @@ export default function Hero() {
           {/* Typed role */}
           <motion.div
             variants={item}
-            className="h-8 mb-6 text-xl font-medium sm:text-2xl text-slate-300"
+            className="h-8 mb-6 text-xl font-medium sm:text-2xl text-slate-700"
           >
             <TypedText />
           </motion.div>
@@ -233,7 +233,7 @@ export default function Hero() {
           {/* Description */}
           <motion.p
             variants={item}
-            className="max-w-xl mb-10 text-base leading-relaxed text-slate-400 sm:text-lg"
+            className="max-w-xl mb-10 text-base leading-relaxed text-slate-600 sm:text-lg"
           >
             MERN Full-Stack Developer crafting responsive, user-centric
             applications — from React UIs to Node.js APIs — with a focus on
@@ -250,7 +250,7 @@ export default function Hero() {
             </a>
             <a
               href="#contact"
-              className="group px-7 py-3.5 rounded-xl font-semibold text-sm border border-white/10 text-slate-300 hover:border-cyan-400/40 hover:text-white glass-card transition-all duration-300 hover:scale-105 active:scale-95"
+              className="group px-7 py-3.5 rounded-xl font-semibold text-sm border border-slate-300 text-slate-700 hover:border-cyan-500/40 hover:text-slate-900 bg-white/60 backdrop-blur-sm transition-all duration-300 hover:scale-105 active:scale-95"
             >
               Get In Touch
             </a>
@@ -281,12 +281,12 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="p-2.5 rounded-lg glass-card border border-white/6 text-slate-400 hover:text-cyan-400 hover:border-cyan-400/30 transition-all duration-200 hover:scale-110"
+                className="p-2.5 rounded-lg bg-white/40 backdrop-blur-sm border border-slate-300/50 text-slate-600 hover:text-slate-900 hover:border-cyan-500/50 transition-all duration-200 hover:scale-110"
               >
                 <Icon size={18} />
               </a>
             ))}
-            <span className="h-px flex-1 max-w-[80px] bg-gradient-to-r from-white/10 to-transparent" />
+            <span className="h-px flex-1 max-w-[80px] bg-gradient-to-r from-slate-300/50 to-transparent" />
             <span className="font-mono text-xs tracking-widest text-slate-600">
               bhavanishankarmandala@gmail.com
             </span>
