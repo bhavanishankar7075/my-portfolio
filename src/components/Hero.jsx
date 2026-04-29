@@ -232,13 +232,18 @@ export default function Hero() {
 
           {/* Description */}
           <motion.p
-            variants={item}
-            className="max-w-xl mb-10 text-base leading-relaxed text-slate-600 sm:text-lg"
-          >
-            MERN Full-Stack Developer crafting responsive, user-centric
-            applications — from React UIs to Node.js APIs — with a focus on
-            scalability and clean architecture.
-          </motion.p>
+  variants={item}
+  className="max-w-xl mb-10 text-base font-medium leading-relaxed text-slate-800 sm:text-lg"
+>
+  Multi-Stack Engineer specializing in building scalable web
+  ecosystems. From production-grade{" "}
+  <span className="font-bold text-blue-600 drop-shadow-sm">
+    MERN applications
+  </span>{" "}
+  to high-performance{" "}
+  <span className="font-bold text-indigo-600 drop-shadow-sm">Python backends</span>,
+  I deliver clean code and seamless user experiences.
+</motion.p>
 
           {/* CTAs */}
           <motion.div variants={item} className="flex flex-wrap gap-4 mb-12">

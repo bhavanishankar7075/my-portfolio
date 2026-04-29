@@ -83,6 +83,16 @@ const BENTO = [
     tag: 'col-span-1',
     size: 'medium',
   },
+ {
+    id: 'FastAPI',
+    label: 'FastAPI',
+    emoji: '⚡', // Replaced snake with bolt to emphasize "Fast"
+    desc: 'High-performance Python APIs',
+    accent: 'from-teal-400/20 to-emerald-500/5', // Unique Teal/Emerald gradient
+    border: 'border-teal-500/20',
+    tag: 'col-span-1',
+    size: 'medium',
+  },
   {
     id: 'socketio',
     label: 'Socket.IO',
@@ -139,7 +149,7 @@ export default function Skills() {
   const inView = useInView(ref, { once: true, margin: '-60px' })
 
   return (
-    <section id="skills" ref={ref} className="py-28 px-6">
+    <section id="skills" ref={ref} className="px-6 py-28">
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <motion.div
@@ -149,8 +159,8 @@ export default function Skills() {
           className="mb-16"
         >
           <div className="flex items-center gap-3 mb-4">
-            <span className="h-px w-10 bg-gradient-to-r from-blue-600 to-indigo-600" />
-            <span className="text-xs font-mono bg-gradient-to-r from-blue-700 to-indigo-800 bg-clip-text text-transparent tracking-widest uppercase font-semibold">Technical Skills</span>
+            <span className="w-10 h-px bg-gradient-to-r from-blue-600 to-indigo-600" />
+            <span className="font-mono text-xs font-semibold tracking-widest text-transparent uppercase bg-gradient-to-r from-blue-700 to-indigo-800 bg-clip-text">Technical Skills</span>
           </div>
           <h2 className="section-title text-slate-900">
             Tools I build
@@ -164,22 +174,22 @@ export default function Skills() {
           variants={container}
           initial="hidden"
           animate={inView ? 'show' : 'hidden'}
-          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4"
+          className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4"
         >
           {/* Hero cell — spans 2 cols */}
           <motion.div
             variants={cell}
-            className="col-span-2 row-span-1 bg-white/60 backdrop-blur-sm rounded-3xl p-7 border border-white/6 bg-gradient-to-br from-cyan-400/8 to-purple-500/5 hover:border-cyan-400/20 transition-all duration-300 group relative overflow-hidden"
+            className="relative col-span-2 row-span-1 overflow-hidden transition-all duration-300 border bg-white/60 backdrop-blur-sm rounded-3xl p-7 border-white/6 bg-gradient-to-br from-cyan-400/8 to-purple-500/5 hover:border-cyan-400/20 group"
           >
-            <div className="absolute -top-6 -right-6 w-28 h-28 rounded-full bg-cyan-400/10 blur-2xl group-hover:bg-cyan-400/20 transition-colors" />
+            <div className="absolute transition-colors rounded-full -top-6 -right-6 w-28 h-28 bg-cyan-400/10 blur-2xl group-hover:bg-cyan-400/20" />
             <div className="relative">
-              <div className="text-4xl mb-3">🚀</div>
-              <div className="text-xl font-bold text-slate-900 mb-2">Full-Stack MERN</div>
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <div className="mb-3 text-4xl">🚀</div>
+              <div className="mb-2 text-xl font-bold text-slate-900">Full-Stack MERN</div>
+              <p className="text-sm leading-relaxed text-slate-600">
                 End-to-end development — from React UI components to Node.js APIs and MongoDB schemas.
               </p>
-              <div className="flex gap-2 mt-4 flex-wrap">
-                {['React', 'Node', 'Express', 'MongoDB'].map((t) => (
+              <div className="flex flex-wrap gap-2 mt-4">
+                {['React', 'Node', 'Express', 'MongoDB' , 'Redux Toolkit'].map((t) => (
                   <span key={t} className="px-3 py-1.5 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-200 hover:border-blue-400 hover:shadow-[0_0_15px_rgba(37,99,235,0.2)] transition-all duration-200">
                     {t}
                   </span>
@@ -195,9 +205,9 @@ export default function Skills() {
               variants={cell}
               className={`bg-white/60 backdrop-blur-sm rounded-2xl p-5 border ${skill.border} bg-gradient-to-br ${skill.accent} hover:scale-[1.03] transition-all duration-300 group cursor-default relative overflow-hidden`}
             >
-              <div className="text-2xl mb-3">{skill.emoji}</div>
-              <div className="text-sm font-semibold text-slate-900 skill-label mb-1">{skill.label}</div>
-              <div className="text-xs text-slate-600 skill-desc group-hover:text-slate-600 transition-colors">{skill.desc}</div>
+              <div className="mb-3 text-2xl">{skill.emoji}</div>
+              <div className="mb-1 text-sm font-semibold text-slate-900 skill-label">{skill.label}</div>
+              <div className="text-xs transition-colors text-slate-600 skill-desc group-hover:text-slate-600">{skill.desc}</div>
             </motion.div>
           ))}
 
@@ -206,9 +216,9 @@ export default function Skills() {
             variants={cell}
             className="bg-white/60 backdrop-blur-sm rounded-2xl p-5 border border-orange-400/15 bg-gradient-to-br from-orange-400/10 to-red-500/5 hover:scale-[1.03] transition-all duration-300 group cursor-default"
           >
-            <div className="text-2xl mb-3">🌐</div>
-            <div className="text-sm font-semibold text-slate-900 skill-label mb-1">HTML5 / CSS3</div>
-            <div className="text-xs text-slate-600 skill-desc group-hover:text-slate-600 transition-colors">Semantic markup & modern CSS</div>
+            <div className="mb-3 text-2xl">🌐</div>
+            <div className="mb-1 text-sm font-semibold text-slate-900 skill-label">HTML5 / CSS3</div>
+            <div className="text-xs transition-colors text-slate-600 skill-desc group-hover:text-slate-600">Semantic markup & modern CSS</div>
           </motion.div>
 
           {/* REST APIs cell */}
@@ -216,29 +226,29 @@ export default function Skills() {
             variants={cell}
             className="bg-white/60 backdrop-blur-sm rounded-2xl p-5 border border-teal-400/15 bg-gradient-to-br from-teal-400/10 to-cyan-500/5 hover:scale-[1.03] transition-all duration-300 group cursor-default"
           >
-            <div className="text-2xl mb-3">📡</div>
-            <div className="text-sm font-semibold text-slate-900 skill-label mb-1">REST APIs</div>
-            <div className="text-xs text-slate-600 skill-desc group-hover:text-slate-600 transition-colors">API design & integration</div>
+            <div className="mb-3 text-2xl">📡</div>
+            <div className="mb-1 text-sm font-semibold text-slate-900 skill-label">REST APIs</div>
+            <div className="text-xs transition-colors text-slate-600 skill-desc group-hover:text-slate-600">API design & integration</div>
           </motion.div>
 
           {/* ── Backend & Database hero cell ── */}
           <motion.div
             variants={cell}
-            className="col-span-2 bg-white/60 backdrop-blur-sm rounded-3xl p-7 border border-white/6 bg-gradient-to-br from-green-500/10 to-blue-600/8 hover:border-green-400/25 transition-all duration-300 group relative overflow-hidden"
+            className="relative col-span-2 overflow-hidden transition-all duration-300 border bg-white/60 backdrop-blur-sm rounded-3xl p-7 border-white/6 bg-gradient-to-br from-green-500/10 to-blue-600/8 hover:border-green-400/25 group"
           >
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 rounded-full bg-green-400/8 blur-2xl group-hover:bg-green-400/15 transition-colors" />
+            <div className="absolute w-32 h-32 transition-colors rounded-full -bottom-6 -right-6 bg-green-400/8 blur-2xl group-hover:bg-green-400/15" />
             <div className="relative">
               <div className="flex items-center gap-2 mb-1">
-                <span className="text-xs font-mono bg-gradient-to-r from-emerald-700 to-teal-800 bg-clip-text text-transparent tracking-widest uppercase font-semibold">Backend & Database</span>
+                <span className="font-mono text-xs font-semibold tracking-widest text-transparent uppercase bg-gradient-to-r from-emerald-700 to-teal-800 bg-clip-text">Backend & Database</span>
               </div>
-              <div className="text-lg font-bold text-slate-900 mb-2">High-Performance Python Stack</div>
-              <p className="text-slate-600 text-sm leading-relaxed mb-4">
+              <div className="mb-2 text-lg font-bold text-slate-900">High-Performance Python Stack</div>
+              <p className="mb-4 text-sm leading-relaxed text-slate-600">
                 Building async FastAPI services with auto-generated OpenAPI docs and managing relational data at scale with PostgreSQL — powering the backend at Roadvision AI.
               </p>
               <div className="grid grid-cols-2 gap-3">
                 {/* FastAPI */}
                 <div className="flex items-center gap-3 bg-white rounded-xl p-4 border border-slate-200 hover:border-teal-400 hover:shadow-[0_0_15px_rgba(20,184,166,0.2)] transition-all duration-200">
-                  <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center">
+                  <span className="flex items-center justify-center flex-shrink-0 w-8 h-8">
                     <svg viewBox="0 0 24 24" width="28" height="28" fill="none">
                       <circle cx="12" cy="12" r="12" fill="#009688"/>
                       <path d="M12.5 4L7 13h5.5l-1 7 6-9h-5l1-7z" fill="white"/>
@@ -251,7 +261,7 @@ export default function Skills() {
                 </div>
                 {/* PostgreSQL */}
                 <div className="flex items-center gap-3 bg-white rounded-xl p-4 border border-slate-200 hover:border-blue-400 hover:shadow-[0_0_15px_rgba(37,99,235,0.2)] transition-all duration-200">
-                  <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center">
+                  <span className="flex items-center justify-center flex-shrink-0 w-8 h-8">
                     <svg viewBox="0 0 24 24" width="28" height="28" fill="none">
                       <ellipse cx="12" cy="5.5" rx="8" ry="3.5" fill="#336791"/>
                       <path d="M4 5.5v6c0 1.93 3.58 3.5 8 3.5s8-1.57 8-3.5v-6" stroke="#336791" strokeWidth="0"/>

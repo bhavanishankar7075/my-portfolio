@@ -68,7 +68,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" ref={ref} className="py-28 px-6">
+    <section id="contact" ref={ref} className="px-6 py-28">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div
@@ -78,137 +78,137 @@ export default function Contact() {
           className="mb-16"
         >
           <div className="flex items-center gap-3 mb-4">
-            <span className="h-px w-10 bg-cyan-400/50" />
-            <span className="text-xs font-mono text-cyan-400 tracking-widest uppercase">Contact</span>
+            <span className="w-10 h-px bg-cyan-400/50" />
+            <span className="font-mono text-xs tracking-widest uppercase text-cyan-400">Contact</span>
           </div>
           <h2 className="section-title text-slate-900">
             Let's build something
             <br />
             <span className="gradient-text-cyan">great together.</span>
           </h2>
-          <p className="text-slate-600 mt-4 max-w-md">
+          <p className="max-w-md mt-4 text-slate-600">
             Available for internships, full-time roles, and freelance projects. Drop a message
             and I'll get back within 24 hours.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-5 gap-8">
+        <div className="grid gap-8 lg:grid-cols-5">
           {/* Form — 3 cols */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="lg:col-span-3"
-          >
-            <form
-              onSubmit={handleSubmit}
-              className="rounded-3xl border border-slate-700/60 bg-slate-900/50 backdrop-blur-md p-8 space-y-5 shadow-glass-lg"
-            >
-              <div className="grid sm:grid-cols-2 gap-5">
-                <div>
-                  <label className="block text-xs font-mono text-slate-600 mb-2 tracking-widest uppercase">
-                    Name
-                  </label>
-                  <input
-                    name="name"
-                    value={form.name}
-                    onChange={handleChange}
-                    required
-                    placeholder="Your name"
-                    className={inputClass}
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-mono text-slate-600 mb-2 tracking-widest uppercase">
-                    Email
-                  </label>
-                  <input
-                    name="email"
-                    type="email"
-                    value={form.email}
-                    onChange={handleChange}
-                    required
-                    placeholder="your@email.com"
-                    className={inputClass}
-                  />
-                </div>
-              </div>
+         <motion.div
+  initial={{ opacity: 0, x: -40 }}
+  animate={inView ? { opacity: 1, x: 0 } : {}}
+  transition={{ duration: 0.7, delay: 0.1 }}
+  className="lg:col-span-3"
+>
+  <form
+    onSubmit={handleSubmit}
+    className="rounded-3xl border border-slate-200 bg-white/70 backdrop-blur-xl p-8 space-y-5 shadow-[0_8px_30px_rgb(0,0,0,0.04)]"
+  >
+    <div className="grid gap-5 sm:grid-cols-2">
+      <div>
+        <label className="block mb-2 font-mono text-xs font-semibold tracking-widest uppercase text-slate-500">
+          Name
+        </label>
+        <input
+          name="name"
+          value={form.name}
+          onChange={handleChange}
+          required
+          placeholder="Your name"
+          className={`${inputClass} bg-slate-50/50 border-slate-200 focus:border-blue-400 focus:ring-blue-400/10 transition-all`}
+        />
+      </div>
+      <div>
+        <label className="block mb-2 font-mono text-xs font-semibold tracking-widest uppercase text-slate-500">
+          Email
+        </label>
+        <input
+          name="email"
+          type="email"
+          value={form.email}
+          onChange={handleChange}
+          required
+          placeholder="your@email.com"
+          className={`${inputClass} bg-slate-50/50 border-slate-200 focus:border-blue-400 focus:ring-blue-400/10 transition-all`}
+        />
+      </div>
+    </div>
 
-              <div>
-                <label className="block text-xs font-mono text-slate-600 mb-2 tracking-widest uppercase">
-                  Subject
-                </label>
-                <input
-                  name="subject"
-                  value={form.subject}
-                  onChange={handleChange}
-                  required
-                  placeholder="What's this about?"
-                  className={inputClass}
-                />
-              </div>
+    <div>
+      <label className="block mb-2 font-mono text-xs font-semibold tracking-widest uppercase text-slate-500">
+        Subject
+      </label>
+      <input
+        name="subject"
+        value={form.subject}
+        onChange={handleChange}
+        required
+        placeholder="What's this about?"
+        className={`${inputClass} bg-slate-50/50 border-slate-200 focus:border-blue-400 focus:ring-blue-400/10 transition-all`}
+      />
+    </div>
 
-              <div>
-                <label className="block text-xs font-mono text-slate-600 mb-2 tracking-widest uppercase">
-                  Message
-                </label>
-                <textarea
-                  name="message"
-                  value={form.message}
-                  onChange={handleChange}
-                  required
-                  rows={5}
-                  placeholder="Tell me about the project, role, or just say hello..."
-                  className={`${inputClass} resize-none focus:ring-purple-500/60 focus:border-purple-500/50`}
-                />
-              </div>
+    <div>
+      <label className="block mb-2 font-mono text-xs font-semibold tracking-widest uppercase text-slate-500">
+        Message
+      </label>
+      <textarea
+        name="message"
+        value={form.message}
+        onChange={handleChange}
+        required
+        rows={5}
+        placeholder="Tell me about the project, role, or just say hello..."
+        className={`${inputClass} bg-slate-50/50 border-slate-200 focus:border-blue-400 focus:ring-blue-400/10 resize-none transition-all`}
+      />
+    </div>
 
-              <button
-                type="submit"
-                disabled={status === 'sending' || status === 'sent'}
-                className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl font-semibold text-sm bg-gradient-to-r from-cyan-500 via-cyan-400 to-purple-500 text-slate-900 hover:shadow-glow-cyan disabled:opacity-50 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] hover:brightness-110"
-              >
-                {status === 'sending' ? (
-                  <>
-                    <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                    Sending...
-                  </>
-                ) : status === 'sent' ? (
-                  <>
-                    <CheckCircle size={16} />
-                    Message Sent!
-                  </>
-                ) : (
-                  <>
-                    <Send size={16} />
-                    Send Message
-                  </>
-                )}
-              </button>
+    <button
+      type="submit"
+      disabled={status === 'sending' || status === 'sent'}
+      className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl font-bold text-sm bg-gradient-to-r from-cyan-400 to-blue-600 text-white shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40 disabled:opacity-50 transition-all duration-300 hover:scale-[1.01] active:scale-[0.99] hover:brightness-105"
+    >
+      {status === 'sending' ? (
+        <>
+          <span className="w-4 h-4 border-2 rounded-full border-white/30 border-t-white animate-spin" />
+          Sending...
+        </>
+      ) : status === 'sent' ? (
+        <>
+          <CheckCircle size={16} />
+          Message Sent!
+        </>
+      ) : (
+        <>
+          <Send size={16} />
+          Send Message
+        </>
+      )}
+    </button>
 
-              {status === 'error' && (
-                <p className="flex items-center gap-2 text-sm text-red-400">
-                  <AlertCircle size={14} />
-                  Something went wrong. Try emailing directly.
-                </p>
-              )}
-            </form>
-          </motion.div>
+    {status === 'error' && (
+      <p className="flex items-center gap-2 text-sm font-medium text-red-500">
+        <AlertCircle size={14} />
+        Something went wrong. Try emailing directly.
+      </p>
+    )}
+  </form>
+</motion.div>
 
           {/* Info — 2 cols */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="lg:col-span-2 space-y-4"
+            className="space-y-4 lg:col-span-2"
           >
             {/* Availability badge */}
-            <div className="bg-white/60 backdrop-blur-sm rounded-2xl border border-green-400/15 p-5">
+            <div className="p-5 border bg-white/60 backdrop-blur-sm rounded-2xl border-green-400/15">
               <div className="flex items-center gap-3 mb-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-green-400 animate-pulse" />
                 <span className="text-sm font-semibold text-green-400">Available Now</span>
               </div>
-              <p className="text-xs text-slate-500 leading-relaxed">
+              <p className="text-xs leading-relaxed text-slate-500">
                 Open to internships, full-time roles, and freelance work. Based in India · Remote OK.
               </p>
             </div>
@@ -223,7 +223,7 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   className={`flex items-center gap-4 p-4 bg-white/60 backdrop-blur-sm rounded-2xl border border-white/5 text-slate-600 ${color} transition-all duration-200 group`}
                 >
-                  <div className="w-9 h-9 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+                  <div className="flex items-center justify-center w-9 h-9 rounded-xl bg-white/5 shrink-0">
                     <Icon size={16} />
                   </div>
                   <div className="overflow-hidden">
