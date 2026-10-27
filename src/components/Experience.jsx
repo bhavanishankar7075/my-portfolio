@@ -2,21 +2,57 @@ import { useRef } from 'react'
 import { motion, useInView, useScroll, useTransform } from 'framer-motion'
 import { Briefcase, Calendar, MapPin, ChevronRight } from 'lucide-react'
 
+
 const EXPERIENCES = [
   {
-    id: 'roadvision',
-    role: 'SDE Intern',
-    company: 'Roadvision AI',
+    id: 'roadvision-fulltime',
+    role: 'Forward Deployment Engineer',
+    company: 'RoadVision AI',
     location: 'On-site · Vijayawada, India',
-    period: 'Current',
-    type: 'Current · SDE Intern',
+    period: 'Oct 2026 – Present',
+    type: 'Full-time',
     color: 'cyan',
     highlights: [
-      'Building scalable backend services with FastAPI and PostgreSQL — designing RESTful endpoints, async query optimization, and data models for AI-driven road analytics.',
-      'Developing type-safe frontend components in React + TypeScript with TailwindCSS, ensuring strict prop contracts and a consistent design system across the dashboard.',
-      'Bridging Python backend and React frontend in a full-stack Python ecosystem, enabling seamless data pipelines from model inference to UI visualization.',
+      'Supporting deployment and implementation of AI-based monitoring solutions for government projects, including warehouse monitoring systems.',
+      'Coordinating with government clients, on-site stakeholders, and internal engineering teams to manage requirements, resolve issues, and support project execution.',
+      'Working across camera integration, backend APIs, databases, and AI-powered application features to support system functionality and reliability.',
+      'Performing feature testing, troubleshooting, and system validation while coordinating technical changes and client feedback.',
+      'Taking greater ownership of project delivery, deployment activities, and cross-functional coordination in the Forward Deployment Engineer role.',
     ],
-    skills: ['FastAPI', 'PostgreSQL', 'Python', 'React', 'TypeScript', 'TailwindCSS', 'REST APIs'],
+    skills: [
+      'Python',
+      'FastAPI',
+      'React',
+      'PostgreSQL',
+      'REST APIs',
+      'AI Deployment',
+      'Troubleshooting',
+      'Project Coordination',
+    ],
+  },
+  {
+    id: 'roadvision-intern',
+    role: 'Software Developer Engineer Intern',
+    company: 'RoadVision AI',
+    location: 'On-site · Vijayawada, India',
+    period: 'Mar 2026 – Sep 2026',
+    type: 'Internship',
+    color: 'cyan',
+    highlights: [
+      'Contributed to the development and testing of AI-based monitoring applications using Python, FastAPI, React, and PostgreSQL.',
+      'Supported backend API integration, database connectivity, and frontend development for monitoring dashboards.',
+      'Worked on camera stream integration, deployment troubleshooting, and system validation for client-side projects.',
+      'Collaborated with engineering and project teams to investigate issues and support implementation requirements.',
+    ],
+    skills: [
+      'Python',
+      'FastAPI',
+      'PostgreSQL',
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'REST APIs',
+    ],
   },
   {
     id: 'labmentix',
@@ -27,13 +63,21 @@ const EXPERIENCES = [
     type: 'Internship',
     color: 'purple',
     highlights: [
-      'Owned development of MERN modules, building modular React UI components and designing efficient backend API flows.',
-      'Engineered REST APIs using Node.js and Express, optimizing database queries and reducing average response latency by 30%.',
-      'Built Redux-powered admin dashboards with accessibility-first responsive design to improve operational visibility and productivity.',
+      'Developed modular React UI components and full-stack application features using the MERN stack.',
+      'Built REST APIs using Node.js and Express and integrated backend services with MongoDB.',
+      'Implemented Redux-powered dashboards and responsive user interfaces for improved usability.',
     ],
-    skills: ['React', 'Redux', 'Node.js', 'Express', 'MongoDB', 'REST APIs'],
+    skills: [
+      'React',
+      'Redux',
+      'Node.js',
+      'Express',
+      'MongoDB',
+      'REST APIs',
+    ],
   },
 ]
+
 
 function ExperienceCard({ exp, index }) {
   const ref = useRef(null)
@@ -79,13 +123,13 @@ function ExperienceCard({ exp, index }) {
 
         <div className="relative">
           {/* Header */}
-          <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 mb-5">
+          <div className="flex flex-col justify-between gap-3 mb-5 sm:flex-row sm:items-start">
             <div className="flex items-start gap-4">
               <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${c.glow} to-transparent border ${c.border} flex items-center justify-center shrink-0`}>
                 <Briefcase size={18} className={c.icon} />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-slate-900 leading-tight">{exp.role}</h3>
+                <h3 className="text-lg font-bold leading-tight text-slate-900">{exp.role}</h3>
                 <p className="text-base font-semibold gradient-text-cyan">{exp.company}</p>
               </div>
             </div>
@@ -109,9 +153,9 @@ function ExperienceCard({ exp, index }) {
           </div>
 
           {/* Highlights */}
-          <ul className="space-y-3 mb-5">
+          <ul className="mb-5 space-y-3">
             {exp.highlights.map((h) => (
-              <li key={h} className="flex items-start gap-3 text-sm text-slate-600 leading-relaxed">
+              <li key={h} className="flex items-start gap-3 text-sm leading-relaxed text-slate-600">
                 <ChevronRight size={14} className={`${c.icon} mt-0.5 shrink-0`} />
                 {h}
               </li>
@@ -141,7 +185,7 @@ export default function Experience() {
   const lineHeight = useTransform(scrollYProgress, [0, 1], ['0%', '100%'])
 
   return (
-    <section id="experience" ref={ref} className="py-28 px-6">
+    <section id="experience" ref={ref} className="px-6 py-28">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <motion.div
@@ -151,8 +195,8 @@ export default function Experience() {
           className="mb-16"
         >
           <div className="flex items-center gap-3 mb-4">
-            <span className="h-px w-10 bg-purple-400/50" />
-            <span className="text-xs font-mono text-purple-400 tracking-widest uppercase">Experience</span>
+            <span className="w-10 h-px bg-purple-400/50" />
+            <span className="font-mono text-xs tracking-widest text-purple-400 uppercase">Experience</span>
           </div>
           <h2 className="section-title text-slate-900">
             My career
@@ -166,7 +210,7 @@ export default function Experience() {
           {/* Animated vertical line */}
           <div className="absolute left-[7px] top-0 bottom-0 w-[2px] bg-white/5 rounded-full">
             <motion.div
-              className="w-full rounded-full timeline-line origin-top"
+              className="w-full origin-top rounded-full timeline-line"
               style={{ height: lineHeight }}
             />
           </div>
@@ -177,21 +221,25 @@ export default function Experience() {
             ))}
           </div>
 
-          {/* "Currently studying" node */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.3 }}
-            className="relative pl-12 md:pl-16 mt-8"
-          >
-            <div className="absolute left-0 top-5 w-4 h-4 rounded-full bg-slate-700 ring-4 ring-slate-700/40 border-2 border-dashed border-slate-600 z-10" />
-            <div className="bg-white/60 backdrop-blur-sm rounded-2xl border border-white/5 p-5">
-              <p className="text-sm text-slate-500 font-mono">
-                <span className="text-cyan-400/70">// </span>B.Tech CSE (2022–2026) · Currently SDE Intern @ Roadvision AI ·
-                Open to full-time opportunities from 2026
-              </p>
-            </div>
-          </motion.div>
+
+{/* Career status node */}
+<motion.div
+  initial={{ opacity: 0, x: -40 }}
+  animate={inView ? { opacity: 1, x: 0 } : {}}
+  transition={{ duration: 0.7, delay: 0.3 }}
+  className="relative pl-12 mt-8 md:pl-16"
+>
+  <div className="absolute left-0 z-10 w-4 h-4 border-2 border-dashed rounded-full top-5 bg-slate-700 ring-4 ring-slate-700/40 border-slate-600" />
+  <div className="p-5 border bg-white/60 backdrop-blur-sm rounded-2xl border-white/5">
+    <p className="font-mono text-sm text-slate-500">
+      <span className="text-cyan-400/70">// </span>
+      B.Tech CSE graduate · Forward Deployment Engineer @ RoadVision AI ·
+      Building AI-powered solutions and growing across software engineering
+      and project delivery.
+    </p>
+  </div>
+</motion.div>
+
         </div>
       </div>
     </section>
